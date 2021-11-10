@@ -10,29 +10,43 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.farias.laboratorio3_final_app_android_peluqueria.databinding.FragmentHomeBinding;
+import com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.adapter.RecyclerAdapterHomeClientes;
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
-private FragmentHomeBinding binding;
+
+    // Rview
+    private RecyclerView recyclerView;
+    private FragmentHomeBinding binding;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
 
-    binding = FragmentHomeBinding.inflate(inflater, container, false);
-    View root = binding.getRoot();
+        // inicializo el recycler view
+        recyclerView = binding.recyclerView;
 
-        final TextView textView = binding.textHome;
-        homeViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+
+        View root = binding.getRoot();
+    homeViewModel.getClientes().observe(getViewLifecycleOwner(), clientes -> {
+
+        RecyclerAdapterHomeClientes mAdapter = new RecyclerAdapterHomeClientes(getContext(), clientes);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(mAdapter);
+
+    });
+
+
+
+    homeViewModel.setClientes();
+
         return root;
     }
 
