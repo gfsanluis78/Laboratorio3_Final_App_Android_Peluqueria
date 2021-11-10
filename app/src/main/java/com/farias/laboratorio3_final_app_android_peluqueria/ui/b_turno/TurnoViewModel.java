@@ -1,16 +1,16 @@
-package com.farias.laboratorio3_final_app_android_peluqueria.ui.home;
+package com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class HomeViewModel extends ViewModel {
+public class TurnoViewModel extends ViewModel {
 
     private MutableLiveData<String> mText;
 
-    public HomeViewModel() {
+    public TurnoViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is home fragment");
+        mText.setValue("This is turno fragment");
     }
 
     public LiveData<String> getText() {

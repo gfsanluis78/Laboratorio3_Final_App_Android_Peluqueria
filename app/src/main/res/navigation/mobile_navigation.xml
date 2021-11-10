@@ -7,19 +7,39 @@
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.home.HomeFragment"
-        android:label="@string/menu_home"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.HomeFragment"
+        android:label="@string/menu_inicio"
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery"
-        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.gallery.GalleryFragment"
-        android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        android:id="@+id/nav_turno"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno.TurnoFragment"
+        android:label="@string/menu_turno"
+        tools:layout="@layout/fragment_turno" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_cliente"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.c_cliente.ClienteFragment"
+        android:label="@string/menu_cliente"
+        tools:layout="@layout/fragment_cliente" />
+    <fragment
+        android:id="@+id/nav_informes"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.d_informes.InformeFragment"
+        android:label="Informes"
+        tools:layout="@layout/fragment_informe" />
+    <fragment
+        android:id="@+id/nav_configuraciones"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.e_configuraciones.ConfiguracionesFragment"
+        android:label="Configuraciones"
+        tools:layout="@layout/fragment_configuraciones" />
+    <fragment
+        android:id="@+id/nav_perfil"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.f_perfil.PerfilFragment"
+        android:label="Perfil"
+        tools:layout="@layout/fragment_perfil" />
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.g_logout.LogoutFragment"
+        android:label="Logout"
+        tools:layout="@layout/fragment_logout" />
 </navigation>

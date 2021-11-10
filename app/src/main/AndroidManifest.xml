@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.farias.laboratorio3_final_app_android_peluqueria">
+    package="com.farias.laboratorio3_final_app_android_peluqueria" >
 
     <application
         android:allowBackup="true"
@@ -8,12 +8,12 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Laboratorio3_Final_App_Android_Peluqueria">
+        android:theme="@style/Theme.Laboratorio3_Final_App_Android_Peluqueria" >
         <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Laboratorio3_Final_App_Android_Peluqueria.NoActionBar">
+            android:theme="@style/Theme.Laboratorio3_Final_App_Android_Peluqueria.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
