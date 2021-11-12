@@ -4,7 +4,10 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.util.Log;
 
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Administrador;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Cliente;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.LoginRetrofit;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.TipoDeTrabajo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -23,8 +26,11 @@ import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Field;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.POST;
 
 /**
  * Created by Genaro Farias el 10/11/2021.
@@ -35,19 +41,19 @@ import retrofit2.http.Header;
 public class ApiClient {
     // Declaraciones
     private ArrayList<Cliente> clientes = new ArrayList<>();
-    private static final String URLBASE="https://192.168.1.111:45455/api/";    //le pongo el nombre de Url base que es mas informativa, termina en /
-    private static  PostInterface postInterface;
+    private static final String URLBASE = "https://192.168.1.111:45455/api/";    //le pongo el nombre de Url base que es mas informativa, termina en /
+    private static PostInterface postInterface;
     private static SharedPreferences sharedPreferences;
 
     // metodos
-    private static SharedPreferences conectar(Context context){
-        if (sharedPreferences==null){
-            sharedPreferences = context.getSharedPreferences("Usuario",0);
+    private static SharedPreferences conectar(Context context) {
+        if (sharedPreferences == null) {
+            sharedPreferences = context.getSharedPreferences("Usuario", 0);
         }
-        return  sharedPreferences;
+        return sharedPreferences;
     }
 
-    public static void guardar(Context context, String token){
+    public static void guardar(Context context, String token) {
 
         SharedPreferences sharedPreferences = conectar(context);
         SharedPreferences.Editor editor = sharedPreferences.edit();
@@ -56,28 +62,25 @@ public class ApiClient {
         editor.commit();
     }
 
-    public static String leer(Context context, String ubicacion){
+    public static String leer(Context context, String ubicacion) {
         SharedPreferences sharedPreferences = conectar(context);
         String token = sharedPreferences.getString("token", "No token");
         Log.d("mensaje/ApiC/leer/", "El token leido: ok");
-
-
         return token;
     }
 
     // Construccion del objeto retrofit
-    public static PostInterface getMyApiClient(String ubicacion){
+    public static PostInterface getMyApiClient(String ubicacion) {
 
         Log.d("mensaje Api", ubicacion);
         Gson gson = new GsonBuilder().setLenient().create();
-        Retrofit retrofit=new Retrofit.Builder()
+        Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(URLBASE)
                 // agrego para confiar
                 .client(getUnsafeOkHttpClient().build())
                 .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
-
-        postInterface=retrofit.create(PostInterface.class);
+        postInterface = retrofit.create(PostInterface.class);
 
         return postInterface;
     }
@@ -127,15 +130,18 @@ public class ApiClient {
     // Armar la interface
     public interface PostInterface {
 
-        // obtenerInquilinos()
-        @GET("Inquilino/Todos")
-        Call<List<Cliente>> obtenerClientes (@Header("Authorization") String token);
+        @FormUrlEncoded
+        @POST("Administradores/login")
+        Call<LoginRetrofit> login(@Field("Usuario") String usuario, @Field("Clave") String clave);
+
+        @GET("Administradores")
+        Call<Administrador> obtenerUsuarioActual(@Header("Authorization") String token);
 
 
+        @GET("Clientes/GetAll")
+        Call<List<Cliente>> obtenerClientes(@Header("Authorization") String token);
 
+        @GET("TipoDeTrabajos/GetAll")
+        Call<List<TipoDeTrabajo>> obtenerTipoDeTrabajos(@Header("Authorization") String token);
     }
-
-
-
-
 }

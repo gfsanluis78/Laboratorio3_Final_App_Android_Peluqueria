@@ -42,8 +42,12 @@ public class HomeViewModel extends AndroidViewModel {
         callClientes.enqueue(new Callback<List<Cliente>>() {
             @Override
             public void onResponse(Call<List<Cliente>> call, Response<List<Cliente>> response) {
+                if (response.isSuccessful()){
                     clientes.setValue((ArrayList<Cliente>) response.body());
                     Log.d("mensaje view model", clientes.toString());
+                }
+                Log.d("mensaje HomeVM", response.message());
+
             }
 
             @Override

@@ -9,7 +9,11 @@
         android:id="@+id/nav_home"
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.HomeFragment"
         android:label="@string/menu_inicio"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_to_elegirTrabajoFragment"
+            app:destination="@id/elegirTrabajoFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/nav_turno"
@@ -42,4 +46,9 @@
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.g_logout.LogoutFragment"
         android:label="Logout"
         tools:layout="@layout/fragment_logout" />
+    <fragment
+        android:id="@+id/elegirTrabajoFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirTrabajoFragment"
+        android:label="Elegir trabajo"
+        tools:layout="@layout/fragment_elegir_trabajo" />
 </navigation>

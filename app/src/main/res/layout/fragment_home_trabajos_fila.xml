@@ -21,8 +21,8 @@
 
         <ImageView
             android:id="@+id/IV_foto"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:layout_marginTop="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -32,31 +32,15 @@
 
         <TextView
             android:id="@+id/TV_nombre"
-            android:layout_width="160sp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="monospace"
+            android:textAlignment="center"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/TV_Telefono"
-            app:layout_constraintVertical_bias="0.404" />
-
-        <TextView
-            android:id="@+id/TV_Telefono"
-            android:layout_width="165dp"
-            android:layout_height="25dp"
-            android:layout_marginTop="5dp"
-            android:fontFamily="monospace"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textAlignment="center"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.502"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/IV_foto" />
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

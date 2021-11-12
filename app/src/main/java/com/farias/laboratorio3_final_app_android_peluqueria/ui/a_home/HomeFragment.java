@@ -34,6 +34,7 @@ public class HomeFragment extends Fragment {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
 
+
         View root = binding.getRoot();
     homeViewModel.getClientes().observe(getViewLifecycleOwner(), clientes -> {
 

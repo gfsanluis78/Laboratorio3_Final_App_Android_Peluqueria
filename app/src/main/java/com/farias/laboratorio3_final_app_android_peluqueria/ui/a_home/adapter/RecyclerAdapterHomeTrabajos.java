@@ -19,38 +19,34 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.farias.laboratorio3_final_app_android_peluqueria.R;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Cliente;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
-import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Turno;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.TipoDeTrabajo;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Trabajo;
 
 import java.util.ArrayList;
 
 /**
- * Created by Genaro Farias el 10/11/2021.
+ * Created by Genaro Farias el 12/11/2021.
  * Estudiante de la ULP
  * gfsanluis78@gmail.com
  */
 
-public class RecyclerAdapterHomeClientes extends RecyclerView.Adapter<RecyclerAdapterHomeClientes.HomeClientesViewHolder> {
+public class RecyclerAdapterHomeTrabajos extends RecyclerView.Adapter<RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder> {
 
-    // Declaraciones
+    // declaraciones
     private Context context;
-    private ArrayList<Cliente> lista;
+    private ArrayList<TipoDeTrabajo> lista;
 
-
-    // ######################################
-    //           implemento el holder
-    // ######################################
-    public static class HomeClientesViewHolder extends RecyclerView.ViewHolder {
+    // implemento el holder
+    public static class HomeTrabajosViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView IV_foto;
-        private TextView TV_nombre, TV_telefono;
+        private TextView TV_nombre;
 
-        public HomeClientesViewHolder(@NonNull View itemView) {
+        public HomeTrabajosViewHolder(@NonNull View itemView) {
             super(itemView);
 
             IV_foto = itemView.findViewById(R.id.IV_foto);
             TV_nombre = itemView.findViewById(R.id.TV_nombre);
-            TV_telefono = itemView.findViewById(R.id.TV_Telefono);
-
         }
 
         public ImageView getIV_foto() {
@@ -61,58 +57,45 @@ public class RecyclerAdapterHomeClientes extends RecyclerView.Adapter<RecyclerAd
             return TV_nombre;
         }
 
-        public TextView getTV_telefono() {
-            return TV_telefono;
-        }
     }
 
 
-
-    // ####################################
-    //             Constructor
-    // ####################################
     // Se inicializa la informacion del adapter
-    public RecyclerAdapterHomeClientes(Context context, ArrayList<Cliente> objetos){
+    public RecyclerAdapterHomeTrabajos(Context context, ArrayList<TipoDeTrabajo> objetos){
+        Log.d("mensaje ", "Recycler iniciado");
         this.lista = objetos;
         this.context = context;
     }
 
-    // #################################
-    //         OnCreateViewHolder
-    // #################################
+
 
     @NonNull
     @Override
-    public RecyclerAdapterHomeClientes.HomeClientesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        int layoutIdParaListItem = R.layout.fragment_home_fila;
+        int layoutIdParaListItem = R.layout.fragment_home_trabajos_fila;
         boolean attachToParentRapido = false;
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(layoutIdParaListItem, parent, attachToParentRapido);
 
-        HomeClientesViewHolder homeClientesViewHolder = new HomeClientesViewHolder(view);
+        RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder homeTrabajosViewHolder = new RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder(view);
 
-        return homeClientesViewHolder;
+        return homeTrabajosViewHolder;
     }
 
-    // #################################
-    //         OnBindViewHolder
-    // #################################
-
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapterHomeClientes.HomeClientesViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder holder, int position) {
 
         if (lista.size()==0){
-            Toast.makeText(context, "No hay clientes para mostrar en la lista", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "No hay trabajos para mostrar en la lista", Toast.LENGTH_SHORT).show();
         }
-        Log.d("mensaje", "En la posicion " + position );
+        Log.d("mensaje ", "OnBindHolder trabajos: En la posicion " + position );
 
-        Cliente cliente = lista.get(position);
+        TipoDeTrabajo tipoDeTrabajo = lista.get(position);
 
-        holder.TV_nombre.setText(cliente.getNombreCompleto());
-        holder.TV_telefono.setText(cliente.getTelefono());
+        holder.TV_nombre.setText(tipoDeTrabajo.getNombre());
         Glide.with(context)
-                .load(cliente.getUrlFoto())
+                .load(tipoDeTrabajo.getUrlFoto())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)       // Llama la imagen remota y la carga en el cache,
                 .into(holder.IV_foto);                          // despues la busca de ahi y es mas rapido
         holder.itemView.setOnClickListener(new View.OnClickListener() {
@@ -120,12 +103,13 @@ public class RecyclerAdapterHomeClientes extends RecyclerView.Adapter<RecyclerAd
             public void onClick(View view) {
                 Bundle bundle = new Bundle();                                           // Instancio el bundle a enviar
                 Preparacion preparacion = new Preparacion();                            // Comienzo a preparar el turno
-                preparacion.setCliente(cliente);
+                preparacion.setTipoDeTrabajo(tipoDeTrabajo);
                 bundle.putSerializable("preparacion", preparacion);                           // Meto la preparacion en el bundle
                 Log.d("mensajeViewHolder",preparacion.getCliente().getApellido()+"");
-                Navigation.findNavController(view).navigate(R.id.elegirTrabajoFragment,bundle);       // Meto el bundle en el navigation
+                //Navigation.findNavController(view).navigate(R.id.elegirTrabajoFragment,bundle);       // Meto el bundle en el navigation
             }
         });
+
     }
 
     @Override
