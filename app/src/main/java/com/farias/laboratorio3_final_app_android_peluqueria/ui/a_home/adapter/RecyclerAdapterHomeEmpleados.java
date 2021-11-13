@@ -11,17 +11,13 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.farias.laboratorio3_final_app_android_peluqueria.R;
-import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Cliente;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Empleado;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
-import com.farias.laboratorio3_final_app_android_peluqueria.modelo.TipoDeTrabajo;
-import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Trabajo;
-import com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirTrabajoViewModel;
 
 import java.util.ArrayList;
 
@@ -31,20 +27,20 @@ import java.util.ArrayList;
  * gfsanluis78@gmail.com
  */
 
-public class RecyclerAdapterHomeTrabajos extends RecyclerView.Adapter<RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder> {
+public class RecyclerAdapterHomeEmpleados extends RecyclerView.Adapter<RecyclerAdapterHomeEmpleados.HomeEmpleadosViewHolder> {
 
     // declaraciones
     private Context context;
-    private ArrayList<TipoDeTrabajo> lista;
+    private ArrayList<Empleado> lista;
     private Preparacion preparacion;
 
     // implemento el holder
-    public static class HomeTrabajosViewHolder extends RecyclerView.ViewHolder {
+    public static class HomeEmpleadosViewHolder extends RecyclerView.ViewHolder {
 
         private ImageView IV_foto;
         private TextView TV_nombre;
 
-        public HomeTrabajosViewHolder(@NonNull View itemView) {
+        public HomeEmpleadosViewHolder(@NonNull View itemView) {
             super(itemView);
 
             IV_foto = itemView.findViewById(R.id.IV_foto);
@@ -63,7 +59,7 @@ public class RecyclerAdapterHomeTrabajos extends RecyclerView.Adapter<RecyclerAd
 
 
     // Se inicializa la informacion del adapter
-    public RecyclerAdapterHomeTrabajos(Context context, ArrayList<TipoDeTrabajo> objetos, Preparacion preparacion){
+    public RecyclerAdapterHomeEmpleados(Context context, ArrayList<Empleado> objetos, Preparacion preparacion){
         Log.d("mensaje ", "Recycler iniciado");
         this.lista = objetos;
         this.context = context;
@@ -74,31 +70,31 @@ public class RecyclerAdapterHomeTrabajos extends RecyclerView.Adapter<RecyclerAd
 
     @NonNull
     @Override
-    public RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public RecyclerAdapterHomeEmpleados.HomeEmpleadosViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        int layoutIdParaListItem = R.layout.fragment_home_trabajos_fila;
+        int layoutIdParaListItem = R.layout.fragment_home_profesional_fila;
         boolean attachToParentRapido = false;
         View view = LayoutInflater.from(parent.getContext())
                 .inflate(layoutIdParaListItem, parent, attachToParentRapido);
 
-        RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder homeTrabajosViewHolder = new RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder(view);
+        RecyclerAdapterHomeEmpleados.HomeEmpleadosViewHolder homeEmpleadosViewHolder = new RecyclerAdapterHomeEmpleados.HomeEmpleadosViewHolder(view);
 
-        return homeTrabajosViewHolder;
+        return homeEmpleadosViewHolder;
     }
 
     @Override
-    public void onBindViewHolder(@NonNull RecyclerAdapterHomeTrabajos.HomeTrabajosViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull RecyclerAdapterHomeEmpleados.HomeEmpleadosViewHolder holder, int position) {
 
         if (lista.size()==0){
-            Toast.makeText(context, "No hay trabajos para mostrar en la lista", Toast.LENGTH_SHORT).show();
+            Toast.makeText(context, "No hay Empleados para mostrar en la lista", Toast.LENGTH_SHORT).show();
         }
-        Log.d("mensaje ", "OnBindHolder trabajos: En la posicion " + position );
+        Log.d("mensaje ", "OnBindHolder Empleados: En la posicion " + position );
 
-        TipoDeTrabajo tipoDeTrabajo = lista.get(position);
+        Empleado empleado = lista.get(position);
 
-        holder.TV_nombre.setText(tipoDeTrabajo.getNombre());
+        holder.TV_nombre.setText(empleado.getNombreCompleto());
         Glide.with(context)
-                .load(tipoDeTrabajo.getUrlFoto())
+                .load(empleado.getUrlFoto())
                 .diskCacheStrategy(DiskCacheStrategy.ALL)       // Llama la imagen remota y la carga en el cache,
                 .into(holder.IV_foto);                          // despues la busca de ahi y es mas rapido
 
@@ -107,10 +103,10 @@ public class RecyclerAdapterHomeTrabajos extends RecyclerView.Adapter<RecyclerAd
             public void onClick(View view) {
                 Bundle bundle = new Bundle();                                           // Instancio el bundle a enviar
                 //Preparacion preparacion = new Preparacion();                            // Comienzo a preparar el turno
-                preparacion.setTipoDeTrabajo(tipoDeTrabajo);
+                preparacion.setEmpleado(empleado);
                 bundle.putSerializable("preparacion", preparacion);                           // Meto la preparacion en el bundle
                 Log.d("mensaje ","OnBindViewHolder Cliente: " + preparacion.getCliente().getApellido()+". Tipo de trabajo: " + preparacion.getTipoDeTrabajo().getNombre());
-                Navigation.findNavController(view).navigate(R.id.elegirProfecionalFragment,bundle);       // Meto el bundle en el navigation
+                //Navigation.findNavController(view).navigate(R.id.elegirProfecionalFragment,bundle);       // Meto el bundle en el navigation
             }
         });
 

@@ -5,41 +5,32 @@ import android.util.Log;
 import java.io.Serializable;
 
 /**
- * Created by Genaro Farias el 10/11/2021.
+ * Created by Genaro Farias el 12/11/2021.
  * Estudiante de la ULP
  * gfsanluis78@gmail.com
  */
 
-public class Administrador implements Serializable {
-    private int idAdministrador;
+public class Empleado implements Serializable {
+
+    private int idEmpleado;
     private String nombre;
     private String apellido;
     private String dni;
     private String telefono;
     private String email;
     private String password;
+    private String especialidad;
     private String avatar;
 
-    public Administrador() {
+    public Empleado() {
     }
 
-    public Administrador(int idAdministrador, String nombre, String apellido, String dni, String telefono, String email, String password, String avatar) {
-        this.idAdministrador = idAdministrador;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.dni = dni;
-        this.telefono = telefono;
-        this.email = email;
-        this.password = password;
-        this.avatar = avatar;
+    public int getIdEmpleado() {
+        return idEmpleado;
     }
 
-    public int getIdAdministrador() {
-        return idAdministrador;
-    }
-
-    public void setIdAdministrador(int idAdministrador) {
-        this.idAdministrador = idAdministrador;
+    public void setIdEmpleado(int idEmpleado) {
+        this.idEmpleado = idEmpleado;
     }
 
     public String getNombre() {
@@ -90,6 +81,14 @@ public class Administrador implements Serializable {
         this.password = password;
     }
 
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
+    }
+
     public String getAvatar() {
         return avatar;
     }
@@ -98,29 +97,30 @@ public class Administrador implements Serializable {
         this.avatar = avatar;
     }
 
-    public String getNombreCompleto(){
-        return nombre + " " + apellido;
+    public String getUrlFoto() {
+        String urlBase = "http://192.168.1.111:45455/";
+        String url = urlBase + avatar;
+        Log.d("mensaje: ", "La url de la foto del empleado " + url);
+
+        return url;
     }
 
     @Override
     public String toString() {
-        return "Administrador{" +
-                "idAdministrador=" + idAdministrador +
+        return "Empleado{" +
+                "idEmpleado=" + idEmpleado +
                 ", nombre='" + nombre + '\'' +
                 ", apellido='" + apellido + '\'' +
                 ", dni='" + dni + '\'' +
                 ", telefono='" + telefono + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", especialidad='" + especialidad + '\'' +
                 ", avatar='" + avatar + '\'' +
                 '}';
     }
 
-    public String getUrlFoto() {
-        String urlBase = "http://192.168.1.111:45455/";
-        String url = urlBase + avatar;
-        Log.d("mensaje: ", "La url de la foto del administrador " + url);
-
-        return url;
+    public String getNombreCompleto() {
+        return nombre + " " +apellido;
     }
-
 }

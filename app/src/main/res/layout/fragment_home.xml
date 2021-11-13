@@ -30,7 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="10dp"
-        android:text="Elija un cliente para crear un nuevo turno o agregue uno nuevo..."
+        android:text="Elija un cliente para crear un nuevo turno o agregue un cliente nuevo..."
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">

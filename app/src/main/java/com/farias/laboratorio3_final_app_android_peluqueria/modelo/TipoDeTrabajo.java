@@ -10,7 +10,7 @@ import android.util.Log;
 
 public class TipoDeTrabajo {
 
-    private int idTipodeTrabajo;
+    private int idTipoDeTrabajo;
     private String nombre;
     private String descripcion;
     private String duracion;
@@ -22,11 +22,11 @@ public class TipoDeTrabajo {
     }
 
     public int getIdTipodeTrabajo() {
-        return idTipodeTrabajo;
+        return idTipoDeTrabajo;
     }
 
-    public void setIdTipodeTrabajo(int idTipodeTrabajo) {
-        this.idTipodeTrabajo = idTipodeTrabajo;
+    public void setIdTipoDeTrabajo(int idTipodeTrabajo) {
+        this.idTipoDeTrabajo = idTipodeTrabajo;
     }
 
     public String getNombre() {
@@ -88,7 +88,7 @@ public class TipoDeTrabajo {
     @Override
     public String toString() {
         return "TipoDeTrabajo{" +
-                "idTipodeTrabajo=" + idTipodeTrabajo +
+                "idTipodeTrabajo=" + idTipoDeTrabajo +
                 ", nombre='" + nombre + '\'' +
                 ", descripcion='" + descripcion + '\'' +
                 ", duracion='" + duracion + '\'' +

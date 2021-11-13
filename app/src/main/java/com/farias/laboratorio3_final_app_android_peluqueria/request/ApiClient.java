@@ -6,7 +6,9 @@ import android.util.Log;
 
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Administrador;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Cliente;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Empleado;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.LoginRetrofit;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.TipoDeTrabajo;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -26,6 +28,7 @@ import okhttp3.OkHttpClient;
 import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
+import retrofit2.http.Body;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
@@ -143,5 +146,8 @@ public class ApiClient {
 
         @GET("TipoDeTrabajos/GetAll")
         Call<List<TipoDeTrabajo>> obtenerTipoDeTrabajos(@Header("Authorization") String token);
+
+        @POST("Empleados/GetAllByTipo")    // todo: falta ver disponibilidad horaria
+        Call<List<Empleado>> obtenerEmpleadoDisponibleParaTrabajo (@Header("Authorization") String token,@Body TipoDeTrabajo tipoDeTrabajo);
     }
 }

@@ -19,9 +19,11 @@ public class Preparacion implements Serializable {
     private String costo;
     private String notas;
     private String fechaCreacion;
+    private Empleado empleado;
 
     public Preparacion() {
     }
+
 
     public int getIdTurno() {
         return idTurno;
@@ -87,12 +89,21 @@ public class Preparacion implements Serializable {
         this.fechaCreacion = fechaCreacion;
     }
 
+
     public TipoDeTrabajo getTipoDeTrabajo() {
         return tipoDeTrabajo;
     }
 
     public void setTipoDeTrabajo(TipoDeTrabajo tipoDeTrabajo) {
         this.tipoDeTrabajo = tipoDeTrabajo;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     @Override

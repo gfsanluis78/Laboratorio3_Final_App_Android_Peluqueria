@@ -50,5 +50,14 @@
         android:id="@+id/elegirTrabajoFragment"
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirTrabajoFragment"
         android:label="Elegir trabajo"
-        tools:layout="@layout/fragment_elegir_trabajo" />
+        tools:layout="@layout/fragment_elegir_trabajo" >
+        <action
+            android:id="@+id/action_elegirTrabajoFragment_to_elegirProfecionalFragment"
+            app:destination="@id/elegirProfecionalFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elegirProfecionalFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirProfesionalFragment"
+        android:label="Elegir un profesional"
+        tools:layout="@layout/fragment_elegir_profesional" />
 </navigation>
