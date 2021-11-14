@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_nav_home_to_elegirTrabajoFragment"
             app:destination="@id/elegirTrabajoFragment" />
+        <action
+            android:id="@+id/action_nav_home_to_confirmacionTurnoFragment"
+            app:destination="@id/confirmacionTurnoFragment" />
     </fragment>
 
     <fragment
@@ -59,5 +62,28 @@
         android:id="@+id/elegirProfecionalFragment"
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirProfesionalFragment"
         android:label="Elegir un profesional"
-        tools:layout="@layout/fragment_elegir_profesional" />
+        tools:layout="@layout/fragment_elegir_profesional" >
+        <action
+            android:id="@+id/action_elegirProfecionalFragment_to_elegirFechaFragment"
+            app:destination="@id/elegirFechaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elegirFechaFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirFechaFragment"
+        android:label="Elegir la fecha"
+        tools:layout="@layout/fragment_elegir_fecha" >
+        <action
+            android:id="@+id/action_elegirFechaFragment_to_elegirTurnoFragment"
+            app:destination="@id/elegirTurnoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/elegirTurnoFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirBloqueFragment"
+        android:label="Elegir turno"
+        tools:layout="@layout/fragment_elegir_bloque" />
+    <fragment
+        android:id="@+id/confirmacionTurnoFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ConfirmacionTurnoFragment"
+        android:label="Confirmacion de turno"
+        tools:layout="@layout/fragment_confirmacion_turno" />
 </navigation>

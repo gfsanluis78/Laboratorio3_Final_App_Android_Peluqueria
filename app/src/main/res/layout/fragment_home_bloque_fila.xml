@@ -8,41 +8,29 @@
     app:contentPadding="10dp"
     app:cardElevation="10dp"
     android:layout_margin="10dp"
-    android:id="@+id/CV_trabajo"
-    app:cardCornerRadius="10dp"
-    >
+    android:id="@+id/CV_bloque"
+    app:cardCornerRadius="10dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:paddingBottom="15dp">
-
-
-        <ImageView
-            android:id="@+id/IV_foto"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />
-
+        android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/TV_nombre"
-            android:layout_width="match_parent"
+            android:id="@+id/TV_desde_hasta"
+            android:layout_width="165dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="1dp"
             android:fontFamily="monospace"
+            android:text="HH:MM a HH:MM"
             android:textAlignment="center"
-            android:textSize="15dp"
+            android:textSize="20sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.502"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/IV_foto" />
-
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0" />
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>
+

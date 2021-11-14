@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+tools:context=".ui.a_home.ElegirBloqueFragment">
+
+<LinearLayout
+    android:id="@+id/linearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/CV_datosDelCliente"
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TV_label_datosCliente"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="Datos del cliente:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TV_nombre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Nombre" />
+
+                <TextView
+                    android:id="@+id/TV_dni"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Dni" />
+
+                <TextView
+                    android:id="@+id/TV_telefono"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:text="Telefono" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/IV_foto_del_cliente"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginRight="0dp"
+                android:layout_weight="1"
+                tools:src="@tools:sample/avatars" />
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TV_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trabajo elegido:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TV_trabajo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Trabajo elegido:" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/IV_foto_trabajo"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                tools:src="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TV_label_profecional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Profesional elegido:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TV_profesional"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Trabajo elegido:" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/IV_foto_profesional"
+                android:layout_marginTop="8dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                tools:src="@tools:sample/avatars" />
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginBottom="10dp"
+        app:cardCornerRadius="5dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="210dp"
+                android:layout_height="match_parent"
+                android:layout_margin="15dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/TV_label_fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fecha elegida:"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/TV_fecha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:text="Dia/Mes/Año" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+    <TextView
+        android:id="@+id/TV_label_elija_dia"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="10dp"
+        android:text="Elija turno disponible..."
+        android:textStyle="bold" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:visibility="gone"
+        android:id="@+id/RV_bloques"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"/>
+
+    <Button
+        android:id="@+id/BT_de9a10"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="9:00 a 10:00"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/BT_de10a11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="10:00 a 11:00 "
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/BT_de11a12"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="11:00 a 11:00"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/BT_de12a13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="12:00 a 13:00"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/BT_14a15"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="14:00 a 15:00"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/BT_15a16"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="15:00 a 16:00 "
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/BT_16a17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="16:00 a 17:00"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+    <Button
+        android:id="@+id/BT_17a18"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="17:00 a 18:00"
+        android:layout_marginLeft="60dp"
+        android:layout_marginRight="60dp"/>
+
+</LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

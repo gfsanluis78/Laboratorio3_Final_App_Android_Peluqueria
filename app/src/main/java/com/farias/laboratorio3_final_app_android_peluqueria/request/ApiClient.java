@@ -5,7 +5,9 @@ import android.content.SharedPreferences;
 import android.util.Log;
 
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Administrador;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Bloque;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Cliente;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.ConsultaHorarios;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Empleado;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.LoginRetrofit;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
@@ -44,7 +46,7 @@ import retrofit2.http.POST;
 public class ApiClient {
     // Declaraciones
     private ArrayList<Cliente> clientes = new ArrayList<>();
-    private static final String URLBASE = "https://192.168.1.111:45455/api/";    //le pongo el nombre de Url base que es mas informativa, termina en /
+    private static final String URLBASE = "https://192.168.1.111:45456/api/";    //le pongo el nombre de Url base que es mas informativa, termina en /
     private static PostInterface postInterface;
     private static SharedPreferences sharedPreferences;
 
@@ -149,5 +151,8 @@ public class ApiClient {
 
         @POST("Empleados/GetAllByTipo")    // todo: falta ver disponibilidad horaria
         Call<List<Empleado>> obtenerEmpleadoDisponibleParaTrabajo (@Header("Authorization") String token,@Body TipoDeTrabajo tipoDeTrabajo);
+
+        @POST("Bloques/GetAllByHorarioByEmpleado")      // todo: Busca los bloques del dia y del empleado
+        Call<List<Bloque>> obtenerBloquesLibresDelDiaDelProfesional(@Header("Authorization") String token,@Body ConsultaHorarios consultaHorarios);
     }
 }

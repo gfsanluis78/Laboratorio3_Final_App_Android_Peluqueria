@@ -3,16 +3,24 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/background_calendar.xml" value="0.11296296296296296" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/background_cardviews_elegidos.xml" value="0.2212962962962963" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/background_elegibles.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2703125" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/activity_login.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/content_main.xml" value="0.14402173913043478" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_cliente.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_configuraciones.xml" value="0.1" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_confirmacion_turno.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_bloque.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_fecha.xml" value="0.29545454545454547" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_profecional.xml" value="0.22282608695652173" />
-        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_profesional.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_trabajo.xml" value="0.3596014492753623" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_profesional.xml" value="0.21686746987951808" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_trabajo.xml" value="0.2585227272727273" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_elegir_turno.xml" value="0.22592592592592592" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_gallery.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_home.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_home_bloque_fila.xml" value="0.536" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_home_fila.xml" value="0.12360688956433637" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_home_profecional_fila.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_home_profesional_fila.xml" value="0.25416666666666665" />

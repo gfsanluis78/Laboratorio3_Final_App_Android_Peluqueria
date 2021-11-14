@@ -60,7 +60,7 @@ public class ElegirProfesionalFragment extends Fragment {
                         .load(preparacion.getCliente().getUrlFoto())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)               // Llama la imagen remota y la carga en el cache,
                         .into(binding.IVFotoDelCliente);                          // despues la busca de ahi y es mas rapido
-                mViewModel.setEmpleadoMutableLiveData(p.getTipoDeTrabajo());
+                //mViewModel.setEmpleadoMutableLiveData(p.getTipoDeTrabajo());
             }
         });
 

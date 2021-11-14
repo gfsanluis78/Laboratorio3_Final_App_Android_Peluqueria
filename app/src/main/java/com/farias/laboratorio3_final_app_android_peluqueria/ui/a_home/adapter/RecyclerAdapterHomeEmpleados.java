@@ -11,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -106,7 +107,7 @@ public class RecyclerAdapterHomeEmpleados extends RecyclerView.Adapter<RecyclerA
                 preparacion.setEmpleado(empleado);
                 bundle.putSerializable("preparacion", preparacion);                           // Meto la preparacion en el bundle
                 Log.d("mensaje ","OnBindViewHolder Cliente: " + preparacion.getCliente().getApellido()+". Tipo de trabajo: " + preparacion.getTipoDeTrabajo().getNombre());
-                //Navigation.findNavController(view).navigate(R.id.elegirProfecionalFragment,bundle);       // Meto el bundle en el navigation
+                Navigation.findNavController(view).navigate(R.id.elegirFechaFragment,bundle);       // Meto el bundle en el navigation
             }
         });
 

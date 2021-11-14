@@ -20,6 +20,8 @@ public class Preparacion implements Serializable {
     private String notas;
     private String fechaCreacion;
     private Empleado empleado;
+    private Fecha fecha;
+    private Bloque bloque;
 
     public Preparacion() {
     }
@@ -106,17 +108,36 @@ public class Preparacion implements Serializable {
         this.empleado = empleado;
     }
 
+    public Fecha getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(Fecha fecha) {
+        this.fecha = fecha;
+    }
+
+    public Bloque getBloque() {
+        return bloque;
+    }
+
+    public void setBloque(Bloque bloque) {
+        this.bloque = bloque;
+    }
+
     @Override
     public String toString() {
         return "Preparacion{" +
                 "idTurno=" + idTurno +
                 ", horario=" + horario +
                 ", estado=" + estado +
+                ", tipoDeTrabajo=" + tipoDeTrabajo +
                 ", trabajo=" + trabajo +
                 ", cliente=" + cliente +
                 ", costo='" + costo + '\'' +
                 ", notas='" + notas + '\'' +
                 ", fechaCreacion='" + fechaCreacion + '\'' +
+                ", empleado=" + empleado +
+                ", fecha=" + fecha +
                 '}';
     }
 }
