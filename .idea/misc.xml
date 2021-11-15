@@ -3,11 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable-v24/mi_borde_redondo.xml" value="0.15787037037037038" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/background_calendar.xml" value="0.11296296296296296" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/background_cardviews_elegidos.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/background_elegibles.xml" value="0.2212962962962963" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/drawable/ic_menu_gallery.xml" value="0.2703125" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/activity_login.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/blank_fragment.xml" value="0.14074074074074075" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/content_main.xml" value="0.14402173913043478" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_cliente.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Genaro/Documents/TUDS/Moviles/AndroidStudioProjects/Laboratorio3_Final_App_Android_Peluqueria/app/src/main/res/layout/fragment_configuraciones.xml" value="0.1" />

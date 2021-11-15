@@ -19,7 +19,7 @@ tools:context=".ui.b_turno.TurnoByFechaFragment">
         android:layout_height="wrap_content"
         android:layout_marginStart="20dp"
         android:layout_marginTop="10dp"
-        android:text="Elija un dia y presione para el boton consultar turnos..."
+        android:text="Elija un dia para consultar turnos..."
         android:textStyle="bold" />
 
     <CalendarView

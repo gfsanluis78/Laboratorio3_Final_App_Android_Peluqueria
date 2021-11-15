@@ -55,8 +55,8 @@ public class TurnoByFechaFragment extends Fragment {
         calendarView = binding.calendarViewElejirFecha;
 
         long now = System.currentTimeMillis() - 1000;
-        calendarView.setMinDate(now);
-        calendarView.setMaxDate(now+(1000*60*60*24)*21); //After 7 Days from Now
+        //calendarView.setMinDate(now);
+        //calendarView.setMaxDate(now+(1000*60*60*24)*21); //After 21 Days from Now
 
         calendarView.setOnDateChangeListener(new CalendarView.OnDateChangeListener() {
             @Override

@@ -38,6 +38,7 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
 
 /**
@@ -169,6 +170,11 @@ public class ApiClient {
 
         @POST("Turnos/GetAllFullByFecha")
         Call<List<Turno>> obtenerTurnosFullByFecha(@Header("Authorization") String token, @Body ConsultaHorarios consultaHorarios );
+
+        // actualizarPerfil(Administrador administrador)
+        @PATCH("Administradores/Editar")
+        Call<Administrador> actualizarPerfil(@Header("Authorization") String token, @Body Administrador administrador);
+
     }
 
 }

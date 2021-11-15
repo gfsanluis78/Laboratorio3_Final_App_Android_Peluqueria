@@ -82,12 +82,12 @@ public class Administrador implements Serializable {
         this.email = email;
     }
 
-    public String getPassword() {
+    public String getContraseña() {
         return password;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setContraseña(String contraseña) {
+        this.password = contraseña;
     }
 
     public String getAvatar() {

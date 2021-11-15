@@ -1,13 +1,197 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:id="@+id/scroll"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:padding="8dp"
+android:background="@color/white">
+<LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".ui.f_perfil.PerfilFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello perfil" />
 
-</FrameLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ImageView
+        android:id="@+id/IV_foto"
+        android:paddingBottom="10dp"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_gravity="center"
+        android:tooltipText="foto"
+        />
+
+    <TextView
+        android:id="@+id/TV_titulo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Perfil"
+        android:textAlignment="center"
+        android:textSize="30sp"
+
+        />
+    <EditText
+        android:id="@+id/ET_Id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Id"
+        android:paddingLeft="20dp"
+        android:paddingBottom="0dp"
+        android:textSize="1sp"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/TV_dni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DNI"
+        android:paddingLeft="20dp"
+        android:textSize="15sp"
+
+        />
+
+    <EditText
+        android:id="@+id/ET_dni"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="DNI"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/TV_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:paddingLeft="20dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/ET_nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="Nombre"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        />
+
+    <TextView
+        android:id="@+id/TV_apellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellido"
+        android:paddingLeft="20dp"
+        android:textSize="15sp" />
+
+    <EditText
+        android:id="@+id/ET_apellido"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="Apellido"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/TV_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:paddingLeft="20dp"
+        android:textSize="15sp"
+        />
+    <EditText
+        android:id="@+id/ET_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="Email"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        />
+    <TextView
+        android:id="@+id/TV_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña"
+        android:paddingLeft="20dp"
+        android:textSize="15sp"
+        />
+
+    <EditText
+        android:id="@+id/ET_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="Contraseña"
+        android:inputType="textPassword"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/TV_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefono"
+        android:paddingLeft="20dp"
+        android:textSize="15sp"
+        />
+    <EditText
+        android:id="@+id/ET_telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:enabled="false"
+        android:hint="Telefono"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:paddingTop="130dp">
+
+        <Button
+            android:id="@+id/BT_Editar"
+            android:layout_width="210dp"
+            android:layout_height="match_parent"
+            android:background="@drawable/mi_borde_redondo"
+            android:text="Editar"
+            android:textSize="30sp"
+            android:layout_marginRight="5dp"
+
+            />
+
+        <Button
+            android:id="@+id/BT_Guardar"
+            android:layout_width="210dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:background="@drawable/mi_borde_redondo"
+            android:text="Guardar"
+            android:textSize="30sp"
+            android:layout_marginLeft="5dp"
+            android:visibility="invisible"/>
+    </LinearLayout>
+
+
+</LinearLayout>
+</ScrollView>
