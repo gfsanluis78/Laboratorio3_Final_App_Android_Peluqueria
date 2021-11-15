@@ -86,4 +86,9 @@
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ConfirmacionTurnoFragment"
         android:label="Confirmacion de turno"
         tools:layout="@layout/fragment_confirmacion_turno" />
+    <fragment
+        android:id="@+id/nav_turnoByfecha"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno.TurnoByFechaFragment"
+        android:label="Turnos por fecha"
+        tools:layout="@layout/fragment_turno_by_fecha" />
 </navigation>

@@ -13,6 +13,8 @@ public class Trabajo implements Serializable {
     private int idTipoDeTrabajo;
     private int idEmpleado;
     private String comentarios;
+    private TipoDeTrabajo tipoDeTrabajo;
+    private Empleado empleado;
 
     public Trabajo() {
     }
@@ -22,6 +24,31 @@ public class Trabajo implements Serializable {
         this.idTipoDeTrabajo = idTipoDeTrabajo;
         this.idEmpleado = idEmpleado;
         this.comentarios = comentarios;
+    }
+
+    public Trabajo(int idTrabajo, int idTipoDeTrabajo, int idEmpleado, String comentarios, TipoDeTrabajo tipoDeTrabajo, Empleado empleado) {
+        this.idTrabajo = idTrabajo;
+        this.idTipoDeTrabajo = idTipoDeTrabajo;
+        this.idEmpleado = idEmpleado;
+        this.comentarios = comentarios;
+        this.tipoDeTrabajo = tipoDeTrabajo;
+        this.empleado = empleado;
+    }
+
+    public TipoDeTrabajo getTipoDeTrabajo() {
+        return tipoDeTrabajo;
+    }
+
+    public void setTipoDeTrabajo(TipoDeTrabajo tipoDeTrabajo) {
+        this.tipoDeTrabajo = tipoDeTrabajo;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     public int getIdTrabajo() {
@@ -63,6 +90,8 @@ public class Trabajo implements Serializable {
                 ", idTipoDeTrabajo=" + idTipoDeTrabajo +
                 ", idEmpleado=" + idEmpleado +
                 ", comentarios='" + comentarios + '\'' +
+                ", tipoDeTrabajo=" + tipoDeTrabajo +
+                ", empleado=" + empleado +
                 '}';
     }
 }

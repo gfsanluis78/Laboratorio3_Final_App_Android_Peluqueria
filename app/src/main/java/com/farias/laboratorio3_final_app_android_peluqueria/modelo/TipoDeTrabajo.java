@@ -78,7 +78,7 @@ public class TipoDeTrabajo {
     }
 
     public String getUrlFoto() {
-        String urlBase = "http://192.168.1.111:45456/";
+        String urlBase = "http://192.168.1.111:45455/";
         String url = urlBase + imagen;
         Log.d("mensaje: ", "La url de la foto del tipo de trabajo es " + url);
 

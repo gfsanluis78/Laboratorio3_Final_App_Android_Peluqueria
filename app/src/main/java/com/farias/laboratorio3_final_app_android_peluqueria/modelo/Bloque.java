@@ -10,7 +10,7 @@ import java.io.Serializable;
 
 public class Bloque implements Serializable {
 
-    private int getIdBloque;
+    private int idBloque;
     private int orden;
     private String desde;
     private String hasta;
@@ -19,12 +19,23 @@ public class Bloque implements Serializable {
     public Bloque() {
     }
 
+    public Bloque(int idBloque, String desde, String hasta){
+        this.idBloque = idBloque;
+        this.desde = desde;
+        this.hasta = hasta;
+
+    }
+
+    public void setIdBloque(int idBloque) {
+        this.idBloque = idBloque;
+    }
+
     public int getGetIdBloque() {
-        return getIdBloque;
+        return idBloque;
     }
 
     public void setGetIdBloque(int getIdBloque) {
-        this.getIdBloque = getIdBloque;
+        this.idBloque = getIdBloque;
     }
 
     public int getOrden() {
@@ -66,7 +77,7 @@ public class Bloque implements Serializable {
     @Override
     public String toString() {
         return "Bloque{" +
-                "getIdBloque=" + getIdBloque +
+                "getIdBloque=" + idBloque +
                 ", orden=" + orden +
                 ", desde='" + desde + '\'' +
                 ", hasta='" + hasta + '\'' +

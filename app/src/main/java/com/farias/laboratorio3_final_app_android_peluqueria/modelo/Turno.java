@@ -1,5 +1,7 @@
 package com.farias.laboratorio3_final_app_android_peluqueria.modelo;
 
+import com.google.type.DateTime;
+
 import java.io.Serializable;
 
 /**
@@ -11,27 +13,35 @@ import java.io.Serializable;
 public class Turno implements Serializable {
 
     private int idTurno;
-    private int idHorario;
+    private int idBloque;
     private int idEstado;
     private int idTrabajo;
     private int idCliente;
     private String costo;
     private String notas;
-    private String fechaCreacion;
+    private String fecha;
+    private DateTime fechaCreacion;
+    private Bloque bloque;
+    private Estado estado;
+    private Trabajo trabajo;
+    private Cliente cliente;
+    private Empleado empleado;
 
     public Turno() {
     }
 
-    public Turno(int idTurno, int idHorario, int idEstado, int idTrabajo, int idCliente, String costo, String notas, String fechaCreacion) {
-        this.idTurno = idTurno;
-        this.idHorario = idHorario;
+    public Turno(int idBloque, int idEstado, int idTrabajo, int idCliente, String costo, String fecha) {
+        this.idBloque = idBloque;
         this.idEstado = idEstado;
         this.idTrabajo = idTrabajo;
         this.idCliente = idCliente;
         this.costo = costo;
-        this.notas = notas;
-        this.fechaCreacion = fechaCreacion;
+        this.fecha = fecha;
+
     }
+
+
+
 
     public int getIdTurno() {
         return idTurno;
@@ -41,12 +51,12 @@ public class Turno implements Serializable {
         this.idTurno = idTurno;
     }
 
-    public int getIdHorario() {
-        return idHorario;
+    public int getIdBloque() {
+        return idBloque;
     }
 
-    public void setIdHorario(int idHorario) {
-        this.idHorario = idHorario;
+    public void setIdBloque(int idBloque) {
+        this.idBloque = idBloque;
     }
 
     public int getIdEstado() {
@@ -89,25 +99,79 @@ public class Turno implements Serializable {
         this.notas = notas;
     }
 
-    public String getFechaCreacion() {
+    public String getFecha() {
+        return fecha;
+    }
+
+    public void setFecha(String fecha) {
+        this.fecha = fecha;
+    }
+
+    public DateTime getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(String fechaCreacion) {
+    public void setFechaCreacion(DateTime fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
+    }
+
+    public Bloque getBloque() {
+        return bloque;
+    }
+
+    public void setBloque(Bloque bloque) {
+        this.bloque = bloque;
+    }
+
+    public Estado getEstado() {
+        return estado;
+    }
+
+    public void setEstado(Estado estado) {
+        this.estado = estado;
+    }
+
+    public Trabajo getTrabajo() {
+        return trabajo;
+    }
+
+    public void setTrabajo(Trabajo trabajo) {
+        this.trabajo = trabajo;
+    }
+
+    public Cliente getCliente() {
+        return cliente;
+    }
+
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public Empleado getEmpleado() {
+        return empleado;
+    }
+
+    public void setEmpleado(Empleado empleado) {
+        this.empleado = empleado;
     }
 
     @Override
     public String toString() {
         return "Turno{" +
                 "idTurno=" + idTurno +
-                ", idHorario=" + idHorario +
+                ", idBloque=" + idBloque +
                 ", idEstado=" + idEstado +
                 ", idTrabajo=" + idTrabajo +
                 ", idCliente=" + idCliente +
                 ", costo='" + costo + '\'' +
                 ", notas='" + notas + '\'' +
-                ", fechaCreacion='" + fechaCreacion + '\'' +
+                ", fecha='" + fecha + '\'' +
+                ", fechaCreacion=" + fechaCreacion +
+                ", bloque=" + bloque +
+                ", estado=" + estado +
+                ", trabajo=" + trabajo +
+                ", cliente=" + cliente +
+                ", empleado=" + empleado +
                 '}';
     }
 }

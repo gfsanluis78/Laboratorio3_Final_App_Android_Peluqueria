@@ -55,7 +55,7 @@ public class ElegirProfesionalFragment extends Fragment {
                         .load(preparacion.getTipoDeTrabajo().getUrlFoto())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)               // Llama la imagen remota y la carga en el cache,
                         .into(binding.IVFotoTrabajo);                          // despues la busca de ahi y es mas rapido
-                mViewModel.setEmpleadoMutableLiveData(p.getTipoDeTrabajo());
+                mViewModel.setTrabajoMutableLiveData(p.getTipoDeTrabajo());
                 Glide.with(getContext())
                         .load(preparacion.getCliente().getUrlFoto())
                         .diskCacheStrategy(DiskCacheStrategy.ALL)               // Llama la imagen remota y la carga en el cache,
@@ -64,10 +64,10 @@ public class ElegirProfesionalFragment extends Fragment {
             }
         });
 
-        mViewModel.getEmpleadoMutableLiveData().observe( getViewLifecycleOwner(), empleados -> {               // cambie el this.getActivity por un getViewLifeycleOwner porqu es fragment
+        mViewModel.getTrabajoMutableLiveData().observe( getViewLifecycleOwner(), trabajos -> {               // cambie el this.getActivity por un getViewLifeycleOwner porqu es fragment
             {
 
-                RecyclerAdapterHomeEmpleados mAdapter = new RecyclerAdapterHomeEmpleados(getContext(),empleados, p);
+                RecyclerAdapterHomeEmpleados mAdapter = new RecyclerAdapterHomeEmpleados(getContext(),trabajos, p);
                 recyclerView.setLayoutManager((linearLayoutManager));
                 recyclerView.setAdapter(mAdapter);
             }

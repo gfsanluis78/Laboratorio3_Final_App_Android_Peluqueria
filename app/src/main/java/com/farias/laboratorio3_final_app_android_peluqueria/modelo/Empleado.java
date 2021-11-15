@@ -98,7 +98,7 @@ public class Empleado implements Serializable {
     }
 
     public String getUrlFoto() {
-        String urlBase = "http://192.168.1.111:45456/";
+        String urlBase = "http://192.168.1.111:45455/";
         String url = urlBase + avatar;
         Log.d("mensaje: ", "La url de la foto del empleado " + url);
 

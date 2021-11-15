@@ -138,6 +138,7 @@ public class Preparacion implements Serializable {
                 ", fechaCreacion='" + fechaCreacion + '\'' +
                 ", empleado=" + empleado +
                 ", fecha=" + fecha +
+                ", bloque=" + bloque +
                 '}';
     }
 }

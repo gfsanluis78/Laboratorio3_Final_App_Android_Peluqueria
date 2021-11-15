@@ -4,6 +4,7 @@ import android.app.Application;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -33,6 +34,7 @@ public class ElegirBloqueViewModel extends AndroidViewModel {
     private MutableLiveData<ArrayList<Bloque>> bloqueMutableLiveData;
     private Preparacion preparacion;
     private ConsultaHorarios consultaHorarios;
+    private MutableLiveData<Button> a,b,c,d,e,f,g,h;
 
 
 
@@ -43,6 +45,14 @@ public class ElegirBloqueViewModel extends AndroidViewModel {
         this.bloqueMutableLiveData = new MutableLiveData<>();
         this.preparacion = new Preparacion();
         this.consultaHorarios = new ConsultaHorarios();
+        this.a = new MutableLiveData<>();
+        this.b = new MutableLiveData<>();
+        this.c = new MutableLiveData<>();
+        this.d = new MutableLiveData<>();
+        this.e = new MutableLiveData<>();
+        this.f = new MutableLiveData<>();
+        this.g = new MutableLiveData<>();
+        this.h = new MutableLiveData<>();
     }
 
     // metodos
@@ -53,6 +63,38 @@ public class ElegirBloqueViewModel extends AndroidViewModel {
 
     public MutableLiveData<ArrayList<Bloque>> getBloqueMutableLiveData() {
         return bloqueMutableLiveData;
+    }
+
+    public MutableLiveData<Button> getA() {
+        return a;
+    }
+
+    public MutableLiveData<Button> getB() {
+        return b;
+    }
+
+    public MutableLiveData<Button> getC() {
+        return c;
+    }
+
+    public MutableLiveData<Button> getD() {
+        return d;
+    }
+
+    public MutableLiveData<Button> getE() {
+        return e;
+    }
+
+    public MutableLiveData<Button> getF() {
+        return f;
+    }
+
+    public MutableLiveData<Button> getG() {
+        return g;
+    }
+
+    public MutableLiveData<Button> getH() {
+        return h;
     }
 
     public void setPreparacion(Bundle arguments) {

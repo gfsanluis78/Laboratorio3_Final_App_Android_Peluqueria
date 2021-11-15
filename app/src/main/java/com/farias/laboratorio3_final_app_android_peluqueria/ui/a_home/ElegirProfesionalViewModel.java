@@ -9,11 +9,12 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.MutableLiveData;
-import androidx.lifecycle.ViewModel;
 
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.ConsultaByTipoTrabajo;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Empleado;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.TipoDeTrabajo;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Trabajo;
 import com.farias.laboratorio3_final_app_android_peluqueria.request.ApiClient;
 
 import java.util.ArrayList;
@@ -28,16 +29,18 @@ public class ElegirProfesionalViewModel extends AndroidViewModel {
 
     private Context context;
     private MutableLiveData<Preparacion> preparacionMutableLiveData;
-    private MutableLiveData<ArrayList<Empleado>> empleadoMutableLiveData;
+    private MutableLiveData<ArrayList<Trabajo>> trabajoMutableLiveData;
     private Preparacion preparacion;
+    private ConsultaByTipoTrabajo consultaByTipoTrabajo;
 
     // constructor
     public ElegirProfesionalViewModel(@NonNull Application application) {
         super(application);
         context = application.getApplicationContext();
         this.preparacionMutableLiveData = new MutableLiveData<>();
-        this.empleadoMutableLiveData = new MutableLiveData<>();
+        this.trabajoMutableLiveData = new MutableLiveData<>();
         this.preparacion = new Preparacion();
+        this.consultaByTipoTrabajo = new ConsultaByTipoTrabajo();
     }
 
     // metodos
@@ -45,8 +48,8 @@ public class ElegirProfesionalViewModel extends AndroidViewModel {
         return preparacionMutableLiveData;
     }
 
-    public MutableLiveData<ArrayList<Empleado>> getEmpleadoMutableLiveData() {
-        return empleadoMutableLiveData;
+    public MutableLiveData<ArrayList<Trabajo>> getTrabajoMutableLiveData() {
+        return trabajoMutableLiveData;
     }
 
     public void setPreparacion(Bundle arguments) {
@@ -55,16 +58,18 @@ public class ElegirProfesionalViewModel extends AndroidViewModel {
         preparacionMutableLiveData.setValue(preparacion);
     }
 
-    public void setEmpleadoMutableLiveData(TipoDeTrabajo tipoDeTrabajo){
+    public void setTrabajoMutableLiveData(TipoDeTrabajo tipoDeTrabajo){
+
+        consultaByTipoTrabajo.setIdTipoTrabajo(tipoDeTrabajo.getIdTipodeTrabajo());
 
         String token = ApiClient.leer(context, getClass().toString().toUpperCase(Locale.ROOT));
 
-        Call<List<Empleado>> callEmpleado = ApiClient.getMyApiClient("Inmueble VM").obtenerEmpleadoDisponibleParaTrabajo(token, tipoDeTrabajo);
-        callEmpleado.enqueue(new Callback<List<Empleado>>() {
+        Call<List<Trabajo>> callTrabajo = ApiClient.getMyApiClient("Inmueble VM").obtenerTrabajosByTipoTrabajo(token, consultaByTipoTrabajo);
+        callTrabajo.enqueue(new Callback<List<Trabajo>>() {
             @Override
-            public void onResponse(Call<List<Empleado>> call, Response<List<Empleado>> response) {
+            public void onResponse(Call<List<Trabajo>> call, Response<List<Trabajo>> response) {
                 if (response.isSuccessful()){
-                    empleadoMutableLiveData.setValue((ArrayList<Empleado>) response.body());
+                    trabajoMutableLiveData.setValue((ArrayList<Trabajo>) response.body());
                     if(response.body().isEmpty()){
                         Toast.makeText(context, "No hay profesionales para mostrar", Toast.LENGTH_SHORT).show();
                     }
@@ -78,7 +83,7 @@ public class ElegirProfesionalViewModel extends AndroidViewModel {
             }
 
             @Override
-            public void onFailure(Call<List<Empleado>> call, Throwable t) {
+            public void onFailure(Call<List<Trabajo>> call, Throwable t) {
                 Log.d("mensaje", "Fallo en view model elegir tipo de trabajo: " + t.getMessage());
             }
         });

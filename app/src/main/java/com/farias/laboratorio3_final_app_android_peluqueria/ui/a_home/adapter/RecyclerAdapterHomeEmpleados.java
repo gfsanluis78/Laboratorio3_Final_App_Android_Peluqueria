@@ -19,6 +19,7 @@ import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.farias.laboratorio3_final_app_android_peluqueria.R;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Empleado;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Trabajo;
 
 import java.util.ArrayList;
 
@@ -32,7 +33,7 @@ public class RecyclerAdapterHomeEmpleados extends RecyclerView.Adapter<RecyclerA
 
     // declaraciones
     private Context context;
-    private ArrayList<Empleado> lista;
+    private ArrayList<Trabajo> lista;
     private Preparacion preparacion;
 
     // implemento el holder
@@ -60,7 +61,7 @@ public class RecyclerAdapterHomeEmpleados extends RecyclerView.Adapter<RecyclerA
 
 
     // Se inicializa la informacion del adapter
-    public RecyclerAdapterHomeEmpleados(Context context, ArrayList<Empleado> objetos, Preparacion preparacion){
+    public RecyclerAdapterHomeEmpleados(Context context, ArrayList<Trabajo> objetos, Preparacion preparacion){
         Log.d("mensaje ", "Recycler iniciado");
         this.lista = objetos;
         this.context = context;
@@ -91,7 +92,9 @@ public class RecyclerAdapterHomeEmpleados extends RecyclerView.Adapter<RecyclerA
         }
         Log.d("mensaje ", "OnBindHolder Empleados: En la posicion " + position );
 
-        Empleado empleado = lista.get(position);
+        Empleado empleado = lista.get(position).getEmpleado();
+        Trabajo trabajo = lista.get(position);
+
 
         holder.TV_nombre.setText(empleado.getNombreCompleto());
         Glide.with(context)
@@ -105,8 +108,9 @@ public class RecyclerAdapterHomeEmpleados extends RecyclerView.Adapter<RecyclerA
                 Bundle bundle = new Bundle();                                           // Instancio el bundle a enviar
                 //Preparacion preparacion = new Preparacion();                            // Comienzo a preparar el turno
                 preparacion.setEmpleado(empleado);
+                preparacion.setTrabajo(trabajo);
                 bundle.putSerializable("preparacion", preparacion);                           // Meto la preparacion en el bundle
-                Log.d("mensaje ","OnBindViewHolder Cliente: " + preparacion.getCliente().getApellido()+". Tipo de trabajo: " + preparacion.getTipoDeTrabajo().getNombre());
+                Log.d("mensaje ","OnBindViewHolder Preparacion: " + preparacion.toString());
                 Navigation.findNavController(view).navigate(R.id.elegirFechaFragment,bundle);       // Meto el bundle en el navigation
             }
         });

@@ -7,11 +7,14 @@ import android.util.Log;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Administrador;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Bloque;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Cliente;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.ConsultaByTipoTrabajo;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.ConsultaHorarios;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Empleado;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.LoginRetrofit;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.TipoDeTrabajo;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Trabajo;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Turno;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
@@ -46,7 +49,7 @@ import retrofit2.http.POST;
 public class ApiClient {
     // Declaraciones
     private ArrayList<Cliente> clientes = new ArrayList<>();
-    private static final String URLBASE = "https://192.168.1.111:45456/api/";    //le pongo el nombre de Url base que es mas informativa, termina en /
+    private static final String URLBASE = "https://192.168.1.111:45455/api/";    //le pongo el nombre de Url base que es mas informativa, termina en /
     private static PostInterface postInterface;
     private static SharedPreferences sharedPreferences;
 
@@ -154,5 +157,18 @@ public class ApiClient {
 
         @POST("Bloques/GetAllByHorarioByEmpleado")      // todo: Busca los bloques del dia y del empleado
         Call<List<Bloque>> obtenerBloquesLibresDelDiaDelProfesional(@Header("Authorization") String token,@Body ConsultaHorarios consultaHorarios);
+
+        @POST("Trabajos/GetAllByTipoTrabajoByEmpleado")      // todo: Busca los bloques del dia y del empleado
+        Call<List<Trabajo>> obtenerTrabajosByTipoTrabajo(@Header("Authorization") String token,@Body ConsultaByTipoTrabajo entidad);
+
+        @POST("Turnos")      // todo: Busca los bloques del dia y del empleado
+        Call<Turno> crearTurno(@Header("Authorization") String token, @Body Turno entidad);
+
+        @GET("Turnos/GetAllFull")
+        Call<List<Turno>> obtenerTurnosFull(@Header("Authorization") String token);
+
+        @POST("Turnos/GetAllFullByFecha")
+        Call<List<Turno>> obtenerTurnosFullByFecha(@Header("Authorization") String token, @Body ConsultaHorarios consultaHorarios );
     }
+
 }
