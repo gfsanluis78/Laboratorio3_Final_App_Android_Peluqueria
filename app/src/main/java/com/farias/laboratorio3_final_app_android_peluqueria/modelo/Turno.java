@@ -25,7 +25,6 @@ public class Turno implements Serializable {
     private Estado estado;
     private Trabajo trabajo;
     private Cliente cliente;
-    private Empleado empleado;
 
     public Turno() {
     }
@@ -40,8 +39,21 @@ public class Turno implements Serializable {
 
     }
 
-
-
+    public Turno(int idTurno, int idBloque, int idEstado, int idTrabajo, int idCliente, String costo, String notas, String fecha, DateTime fechaCreacion, Bloque bloque, Estado estado, Trabajo trabajo, Cliente cliente) {
+        this.idTurno = idTurno;
+        this.idBloque = idBloque;
+        this.idEstado = idEstado;
+        this.idTrabajo = idTrabajo;
+        this.idCliente = idCliente;
+        this.costo = costo;
+        this.notas = notas;
+        this.fecha = fecha;
+        this.fechaCreacion = fechaCreacion;
+        this.bloque = bloque;
+        this.estado = estado;
+        this.trabajo = trabajo;
+        this.cliente = cliente;
+    }
 
     public int getIdTurno() {
         return idTurno;
@@ -147,13 +159,6 @@ public class Turno implements Serializable {
         this.cliente = cliente;
     }
 
-    public Empleado getEmpleado() {
-        return empleado;
-    }
-
-    public void setEmpleado(Empleado empleado) {
-        this.empleado = empleado;
-    }
 
     @Override
     public String toString() {
@@ -171,7 +176,6 @@ public class Turno implements Serializable {
                 ", estado=" + estado +
                 ", trabajo=" + trabajo +
                 ", cliente=" + cliente +
-                ", empleado=" + empleado +
                 '}';
     }
 }

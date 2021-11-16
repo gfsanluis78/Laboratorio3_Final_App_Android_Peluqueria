@@ -22,6 +22,7 @@ import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Fecha;
 import com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.ElegirFechaViewModel;
 import com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.adapter.RecyclerAdapterHomeEmpleados;
 import com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno.adapter.RecyclerAdapterTurnoFechas;
+import com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno.adapter.RecyclerAdapterTurnoTodos;
 
 import java.util.Calendar;
 
@@ -73,7 +74,7 @@ public class TurnoByFechaFragment extends Fragment {
 
         mViewModel.getTurnosMutablelivedata().observe(getViewLifecycleOwner(), turnos -> {
 
-            RecyclerAdapterTurnoFechas mAdapter = new RecyclerAdapterTurnoFechas(getContext(),turnos);
+            RecyclerAdapterTurnoTodos mAdapter = new RecyclerAdapterTurnoTodos(getContext(),turnos);
             recyclerView.setLayoutManager((linearLayoutManager));
             recyclerView.setAdapter(mAdapter);
         });

@@ -11,6 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 
@@ -38,7 +40,8 @@ public class RecyclerAdapterTurnoTodos extends RecyclerView.Adapter<RecyclerAdap
     // ######################################
     public static class TurnoTodosViewHolder extends RecyclerView.ViewHolder {
 
-        private TextView TV_fecha, TV_bloque, TV_cliente, TV_profesional ;
+        private TextView TV_fecha, TV_bloque, TV_cliente, TV_profesional, TV_id ;
+        private CardView CV_turno;
 
         public TurnoTodosViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -47,6 +50,8 @@ public class RecyclerAdapterTurnoTodos extends RecyclerView.Adapter<RecyclerAdap
             TV_bloque = itemView.findViewById(R.id.TV_bloque);
             TV_cliente = itemView.findViewById(R.id.TV_cliente);
             TV_profesional = itemView.findViewById(R.id.TV_profesional);
+            CV_turno = itemView.findViewById(R.id.CV_turno);
+            TV_id = itemView.findViewById(R.id.TV_id);
         }
 
         public TextView getTV_fecha() {
@@ -64,6 +69,10 @@ public class RecyclerAdapterTurnoTodos extends RecyclerView.Adapter<RecyclerAdap
         public TextView getTV_profesional() {
             return TV_profesional;
         }
+
+        public CardView getCV_turno() { return CV_turno; }
+
+        public TextView getTV_id() { return TV_id; }
 
     }
 
@@ -110,10 +119,20 @@ public class RecyclerAdapterTurnoTodos extends RecyclerView.Adapter<RecyclerAdap
 
         Turno turno = lista.get(position);
 
+        holder.TV_id.setText("Identificacion n°: " +turno.getIdTurno());
         holder.TV_fecha.setText("Fecha: " + turno.getFecha());
         holder.TV_bloque.setText("Horario: " + turno.getBloque().getDesdeHasta());
         holder.TV_cliente.setText("Cliente :" + turno.getCliente().getNombreCompleto());
         holder.TV_profesional.setText("Profesional: " + turno.getTrabajo().getEmpleado().getNombreCompleto());
+        holder.CV_turno.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();                                           // Instancio el bundle a enviar
+                bundle.putSerializable("turno", turno);                           // Meto la inmueble en el bundle
+                Log.d("mensaje","Se envia el bundle con: " + turno.toString());
+                Navigation.findNavController(view).navigate(R.id.turnoDetalleFragment,bundle);       // Meto el bundle clave budle en el navigation
+            }
+        });
     }
 
     @Override

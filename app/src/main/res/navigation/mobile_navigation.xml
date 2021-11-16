@@ -91,4 +91,17 @@
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno.TurnoByFechaFragment"
         android:label="Turnos por fecha"
         tools:layout="@layout/fragment_turno_by_fecha" />
+    <fragment
+        android:id="@+id/clienteDetalleFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.c_cliente.ClienteDetalleFragment"
+        android:label="Detalles del cliente" />
+    <fragment
+        android:id="@+id/clienteTurnosFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.c_cliente.ClienteTurnosFragment"
+        android:label="Listado de turnos"
+        tools:layout="@layout/fragment_cliente_turnos" />
+    <fragment
+        android:id="@+id/turnoDetalleFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno.TurnoDetalleFragment"
+        android:label="Detalles del turno" />
 </navigation>

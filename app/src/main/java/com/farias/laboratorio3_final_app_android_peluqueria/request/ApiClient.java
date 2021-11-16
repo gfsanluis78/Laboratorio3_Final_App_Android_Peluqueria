@@ -175,6 +175,15 @@ public class ApiClient {
         @PATCH("Administradores/Editar")
         Call<Administrador> actualizarPerfil(@Header("Authorization") String token, @Body Administrador administrador);
 
+        // buscarUltimoTurno
+        @POST("Turnos/GetUltimoByCliente")
+        Call<Turno> obtenerUltimoTurnoByCliente(@Header("Authorization") String token, @Body Cliente cliente );
+
+        //obtenerTurnosByCliente
+        @POST("Turnos/GetTurnosByCliente")
+        Call<List<Turno>> obtenerTurnosByCliente(@Header("Authorization") String token, @Body Cliente cliente );
+
+
     }
 
 }
