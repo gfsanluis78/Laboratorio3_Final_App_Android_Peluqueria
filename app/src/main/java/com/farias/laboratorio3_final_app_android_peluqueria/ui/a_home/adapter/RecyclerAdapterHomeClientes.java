@@ -50,7 +50,6 @@ public class RecyclerAdapterHomeClientes extends RecyclerView.Adapter<RecyclerAd
             IV_foto = itemView.findViewById(R.id.IV_foto);
             TV_nombre = itemView.findViewById(R.id.TV_nombre);
             TV_telefono = itemView.findViewById(R.id.TV_Telefono);
-
         }
 
         public ImageView getIV_foto() {

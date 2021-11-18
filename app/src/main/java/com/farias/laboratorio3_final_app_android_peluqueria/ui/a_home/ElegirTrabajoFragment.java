@@ -7,6 +7,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -26,9 +27,12 @@ public class ElegirTrabajoFragment extends Fragment {
     private RecyclerView recyclerView;
     private ElegirTrabajoViewModel mViewModel;
     private FragmentElegirTrabajoBinding binding;
-   // private Cliente c;
-   // private Trabajo t;
     private Preparacion p;
+    private View view;
+    private LinearLayoutManager linearLayoutManager;
+    private RecyclerAdapterHomeTrabajos mAdapter;
+    private RecyclerView.LayoutManager layoutManager;
+
 
     public static ElegirTrabajoFragment newInstance() {
         return new ElegirTrabajoFragment();
@@ -40,12 +44,16 @@ public class ElegirTrabajoFragment extends Fragment {
 
         binding = FragmentElegirTrabajoBinding.inflate(inflater, container,false);
         mViewModel = new ViewModelProvider(this).get(ElegirTrabajoViewModel.class);
-        View view = binding.getRoot();
+        view = binding.getRoot();
+
         recyclerView = view.findViewById(R.id.RV_trabajos);
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(),       // cambie el getContext por el getActivity y lo volvi atras
+        linearLayoutManager = new LinearLayoutManager(getContext(),       // cambie el getContext por el getActivity y lo volvi atras
                 LinearLayoutManager.VERTICAL,
                 false);
+        layoutManager = new GridLayoutManager(getContext(), 2);
+
+
         mViewModel.getPreparacionMutableLiveData().observe( getViewLifecycleOwner(), preparacion -> {
             if(preparacion != null){
                 p = preparacion;
@@ -61,9 +69,8 @@ public class ElegirTrabajoFragment extends Fragment {
 
         mViewModel.getTipoDeTrabajoMutableLiveData().observe( getViewLifecycleOwner(), trabajos -> {               // cambie el this.getActivity por un getViewLifeycleOwner porqu es fragment
             {
-
-                RecyclerAdapterHomeTrabajos mAdapter = new RecyclerAdapterHomeTrabajos(getContext(),trabajos, p);
-                recyclerView.setLayoutManager((linearLayoutManager));
+                mAdapter = new RecyclerAdapterHomeTrabajos(getContext(),trabajos, p);
+                recyclerView.setLayoutManager(layoutManager);
                 recyclerView.setAdapter(mAdapter);
             }
         });

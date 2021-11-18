@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -25,6 +26,10 @@ public class HomeFragment extends Fragment {
     // Rview
     private RecyclerView recyclerView;
     private FragmentHomeBinding binding;
+    private View root;
+    private RecyclerAdapterHomeClientes mAdapter;
+    private LinearLayoutManager linearLayoutManager;
+    private RecyclerView.LayoutManager layoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
@@ -34,14 +39,17 @@ public class HomeFragment extends Fragment {
         // inicializo el recycler view
         recyclerView = binding.recyclerView;
 
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        // opcion linear
+        linearLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false);
+        // o opcion grid
+        layoutManager = new GridLayoutManager(getContext(), 2);
 
+        root = binding.getRoot();
+        homeViewModel.getClientes().observe(getViewLifecycleOwner(), clientes -> {
 
-        View root = binding.getRoot();
-    homeViewModel.getClientes().observe(getViewLifecycleOwner(), clientes -> {
-
-        RecyclerAdapterHomeClientes mAdapter = new RecyclerAdapterHomeClientes(getContext(), clientes);
-        recyclerView.setLayoutManager(linearLayoutManager);
+        mAdapter = new RecyclerAdapterHomeClientes(getContext(), clientes);
+        // uso la grid
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(mAdapter);
 
     });
