@@ -104,4 +104,31 @@
         android:id="@+id/turnoDetalleFragment"
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.b_turno.TurnoDetalleFragment"
         android:label="Detalles del turno" />
+    <fragment
+        android:id="@+id/dia_TurnoByProfesionalFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.d_informes.Dia_TurnoByProfesionalFragment"
+        android:label="fragment_dia_turno_by_profesional"
+        tools:layout="@layout/fragment_dia_turno_by_profesional" />
+    <fragment
+        android:id="@+id/clienteCrearFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.c_cliente.ClienteCrearFragment"
+        android:label="Cargar cliente nuevo" />
+    <fragment
+        android:id="@+id/empleadoDetalleFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.h_empleado.EmpleadoDetalleFragment"
+        android:label="Detalles del profesional" />
+    <fragment
+        android:id="@+id/trabajoDetalleFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.i_trabajo.TrabajoDetalleFragment"
+        android:label="Detalles del tipo de trabajo" />
+    <fragment
+        android:id="@+id/nav_empleado"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.h_empleado.EmpleadoFragment"
+        android:label="Profesionales"
+        tools:layout="@layout/fragment_empleado" />
+    <fragment
+        android:id="@+id/nav_trabajo"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.i_trabajo.TrabajoFragment"
+        android:label="Tipos de trabajos"
+        tools:layout="@layout/fragment_trabajo" />
 </navigation>

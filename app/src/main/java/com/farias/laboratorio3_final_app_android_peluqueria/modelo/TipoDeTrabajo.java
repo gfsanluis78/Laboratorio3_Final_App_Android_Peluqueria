@@ -2,13 +2,15 @@ package com.farias.laboratorio3_final_app_android_peluqueria.modelo;
 
 import android.util.Log;
 
+import java.io.Serializable;
+
 /**
  * Created by Genaro Farias el 12/11/2021.
  * Estudiante de la ULP
  * gfsanluis78@gmail.com
  */
 
-public class TipoDeTrabajo {
+public class TipoDeTrabajo implements Serializable {
 
     private int idTipoDeTrabajo;
     private String nombre;

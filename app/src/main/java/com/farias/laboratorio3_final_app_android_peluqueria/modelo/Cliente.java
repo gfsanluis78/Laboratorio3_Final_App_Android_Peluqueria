@@ -130,7 +130,7 @@ public class Cliente implements Serializable {
 
     public String getUrlFoto() {
         String urlBase = "http://192.168.1.111:45455/";
-        String url = urlBase + avatar;
+        String url = urlBase + avatar.replace("\\","/");
         Log.d("mensaje: ", "La url de la foto del cliente " + url);
 
         return url;

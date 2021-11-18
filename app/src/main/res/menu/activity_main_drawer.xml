@@ -21,6 +21,14 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Clientes" />
         <item
+            android:id="@+id/nav_empleado"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Empleados" />
+        <item
+        android:id="@+id/nav_trabajo"
+        android:icon="@drawable/ic_menu_slideshow"
+        android:title="Trabajos" />
+        <item
             android:id="@+id/nav_informes"
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Informes" />

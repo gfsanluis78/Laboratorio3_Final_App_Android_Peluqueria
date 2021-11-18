@@ -10,9 +10,11 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.farias.laboratorio3_final_app_android_peluqueria.R;
 import com.farias.laboratorio3_final_app_android_peluqueria.databinding.FragmentHomeBinding;
 import com.farias.laboratorio3_final_app_android_peluqueria.ui.a_home.adapter.RecyclerAdapterHomeClientes;
 
@@ -44,6 +46,12 @@ public class HomeFragment extends Fragment {
 
     });
 
+    binding.button.setOnClickListener(new View.OnClickListener() {
+        @Override
+        public void onClick(View view) {
+            Navigation.findNavController(view).navigate(R.id.clienteCrearFragment);
+        }
+    });
 
 
     homeViewModel.setClientes();

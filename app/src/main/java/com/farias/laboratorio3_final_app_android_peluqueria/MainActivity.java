@@ -57,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
                 R.id.nav_turno,
                 R.id.nav_turnoByfecha,
                 R.id.nav_cliente,
+                R.id.nav_empleado,
+                R.id.nav_trabajo,
                 R.id.nav_informes,
                 R.id.nav_configuraciones,
                 R.id.nav_perfil,

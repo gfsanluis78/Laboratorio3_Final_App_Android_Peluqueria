@@ -183,6 +183,25 @@ public class ApiClient {
         @POST("Turnos/GetTurnosByCliente")
         Call<List<Turno>> obtenerTurnosByCliente(@Header("Authorization") String token, @Body Cliente cliente );
 
+        // crearCliente
+        @POST("CLientes/InsertConFoto")
+        Call<Cliente> crearCliente(@Header("Authorization") String token, @Body Cliente cliente );
+
+        // obtenerEmpleados
+        @GET("Empleados/GetAll")
+        Call<List<Empleado>> obtenerEmpleados(@Header("Authorization") String token);
+
+        // obtenerTipoTrabajos
+//        @GET("TipoDeTrabajos/GetAll")
+//        Call<List<TipoDeTrabajo>> obtenerTipoTrabajos(@Header("Authorization") String token);
+
+        // obtenerEmpleadosByTipoTrabajo
+        @POST("Empleados/GetAllByTipoTrabajo")
+        Call<List<Empleado>> obtenerEmpleadosByTipoTrabajo(@Header("Authorization") String token, @Body TipoDeTrabajo tipoDeTrabajo );
+
+        // obtenerTipoTrabajoByEmpleado
+        @POST("TipoDeTrabajos/GetAllByEmpleado")
+        Call<List<TipoDeTrabajo>> obtenerTipoTrabajoByEmpleado(@Header("Authorization") String token, @Body Empleado empleado);
 
     }
 

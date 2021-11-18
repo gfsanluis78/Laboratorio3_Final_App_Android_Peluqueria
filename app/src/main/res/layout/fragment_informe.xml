@@ -1,13 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.d_informes.InformeFragment">
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ui.d_informes.InformeFragment"
+    >
 
-    <TextView
+    <Button
+        android:id="@+id/BT_inf_turno_profesional"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello informe" />
+        android:layout_height="wrap_content"
+        android:text="Turnos x profesional">
+    </Button>
 
-</FrameLayout>
+    <Button
+        android:id="@+id/BT_inf_turno_ocupacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turnos x profesional">
+    </Button>
+
+    <Button
+        android:id="@+id/BT_inf_turno_mes_profesional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turnos x profesional">
+    </Button>
+
+    <Button
+        android:id="@+id/BT_inf_turno__mes_ocupacion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turnos x profesional">
+    </Button>
+
+</LinearLayout>

@@ -28,7 +28,7 @@ public class TurnoDetalleFragment extends Fragment {
             TV_cliente_nombre,TV_cliente_dni, TV_cliente_telefono, TV_cliente_email,
             TV_profesional_nombre,TV_profesional_dni, TV_profesional_telefono, TV_profesinal_email,
             TV_trabajo_tipo, TV_trabajo_descripcion;
-    private CardView CV_cliente;
+    private CardView CV_cliente, CV_profesional, CV_trabajo;
 
     public static TurnoDetalleFragment newInstance() {
         return new TurnoDetalleFragment();
@@ -58,6 +58,8 @@ public class TurnoDetalleFragment extends Fragment {
         TV_trabajo_tipo = binding.TVTrabajoTipo;
         TV_trabajo_descripcion = binding.TVTrabajoDescripcion;
         CV_cliente = binding.CVCliente;
+        CV_profesional = binding.CVProfesional;
+        CV_trabajo = binding.CVTrabajo;
 
         mViewModel.getTurnoMutableLiveData().observe(getViewLifecycleOwner(), turno -> {
 
@@ -86,8 +88,28 @@ public class TurnoDetalleFragment extends Fragment {
                 TV_profesional_dni.setText("Dni: " + turno.getTrabajo().getEmpleado().getDni());
                 TV_profesional_telefono.setText("Telefono: " + turno.getTrabajo().getEmpleado().getTelefono());
                 TV_profesinal_email.setText("Email: " + turno.getTrabajo().getEmpleado().getEmail());
+                CV_profesional.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("empleado", turno.getTrabajo().getEmpleado());
+                        Log.d("mensaje", "Turno detalle fragment: " + turno.getTrabajo().getEmpleado().toString());
+                        Navigation.findNavController(view).navigate(R.id.empleadoDetalleFragment,bundle);
+                    }
+                });
+
+
                 TV_trabajo_tipo.setText("Tipo de trabajo: " + turno.getTrabajo().getTipoDeTrabajo().getNombre());
                 TV_trabajo_descripcion.setText("Descripcion: " + turno.getTrabajo().getTipoDeTrabajo().getDescripcion());
+                CV_trabajo.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Bundle bundle = new Bundle();
+                        bundle.putSerializable("trabajo", turno.getTrabajo().getTipoDeTrabajo());
+                        Log.d("mensaje", "Turno detalle fragment: " + turno.getTrabajo().getTipoDeTrabajo().toString());
+                        Navigation.findNavController(view).navigate(R.id.trabajoDetalleFragment,bundle);
+                    }
+                });
              }
 
         });
