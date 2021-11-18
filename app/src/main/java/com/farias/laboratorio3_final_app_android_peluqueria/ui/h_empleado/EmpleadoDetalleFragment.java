@@ -59,8 +59,14 @@ public class EmpleadoDetalleFragment extends Fragment {
                     .into(binding.IVFoto);                          // despues la busca de ahi y es mas rapido
 
             mViewModel.setTiposDeTrabajos(empleado);
+            mViewModel.setCantidadTurnosRealizados(empleado);
 
 
+
+        });
+
+        mViewModel.getCantidadTurnosRealizados().observe(getViewLifecycleOwner(), cantidad ->{
+            binding.TVEmpleadoCantidadTurnos.setText(cantidad);
 
         });
 

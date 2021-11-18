@@ -203,6 +203,10 @@ public class ApiClient {
         @POST("TipoDeTrabajos/GetAllByEmpleado")
         Call<List<TipoDeTrabajo>> obtenerTipoTrabajoByEmpleado(@Header("Authorization") String token, @Body Empleado empleado);
 
+        // obtenerCantidadTurnosBYEmpleado
+        @POST("Turnos/GetCantidadByEmpleado")
+        Call<Integer> obtenerCantidadTurnosBYEmpleado(@Header("Authorization") String token, @Body Empleado empleado);
+
     }
 
 }

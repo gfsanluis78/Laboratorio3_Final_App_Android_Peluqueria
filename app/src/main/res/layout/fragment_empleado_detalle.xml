@@ -136,6 +136,23 @@ tools:context=".ui.h_empleado.EmpleadoDetalleFragment">
     android:textSize="20sp"
     android:textStyle="bold"/>
 
+    <TextView
+        android:id="@+id/TV_label_cantidad_turnos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Cantidad de turnos registrados"
+        android:paddingLeft="20dp"
+        android:textSize="15sp"
+        />
+    <TextView
+        android:id="@+id/TV_empleado_cantidad_turnos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
 <TextView
     android:id="@+id/TV_label_tipo_trabajo_realiza"
     android:layout_width="match_parent"

@@ -27,6 +27,7 @@ public class EmpleadoDetalleViewModel extends AndroidViewModel {
 
     private MutableLiveData<Empleado> empleadoMutableLiveData;
     private MutableLiveData<ArrayList<TipoDeTrabajo>> tipoTrabajosMutableLiveData;
+    private MutableLiveData<String> cantidadTurnosRealizados;
     private Context context;
     private Empleado empleado;
 
@@ -36,6 +37,7 @@ public class EmpleadoDetalleViewModel extends AndroidViewModel {
         this.context = application.getApplicationContext();
         this.empleadoMutableLiveData = new MutableLiveData<>();
         this.tipoTrabajosMutableLiveData = new MutableLiveData<>();
+        this.cantidadTurnosRealizados = new MutableLiveData<>();
         this.empleado = new Empleado();
     }
 
@@ -47,10 +49,39 @@ public class EmpleadoDetalleViewModel extends AndroidViewModel {
         return tipoTrabajosMutableLiveData;
     }
 
+    public MutableLiveData<String> getCantidadTurnosRealizados() {
+        return cantidadTurnosRealizados;
+    }
+
     public void setEmpleadoMutableLiveData(Bundle bundle) {
         empleado = (Empleado) bundle.getSerializable("empleado");
         Log.d("mensaje", "Empleado Detalle VM: llega el bundle con " + empleado.toString());
         empleadoMutableLiveData.setValue(empleado);
+    }
+
+    public void setCantidadTurnosRealizados(Empleado empleado){
+
+        String token = ApiClient.leer(context, getClass().toString());
+
+        Call<Integer> integerCall = ApiClient.getMyApiClient("Empleados detalle VM").obtenerCantidadTurnosBYEmpleado(token, empleado);
+        integerCall.enqueue(new Callback<Integer>() {
+            @Override
+            public void onResponse(Call<Integer> call, Response<Integer> response) {
+                if (response.isSuccessful()) {
+                    cantidadTurnosRealizados.setValue( response.body() + "");
+                }else {
+                    Log.d("mensaje", "Empleado Detalle VM: " + response.message());
+                    //Toast.makeText(context, "No hay respuesta para mostrar", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<Integer> call, Throwable t) {
+                Toast.makeText(context, "Fallo en Detallle VM/setCantidad " + t.getMessage(), Toast.LENGTH_SHORT).show();
+            }
+        });
+
+
     }
 
 
