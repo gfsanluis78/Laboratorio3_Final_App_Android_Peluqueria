@@ -7,33 +7,53 @@
     android:orientation="vertical"
     tools:context=".ui.d_informes.InformeFragment"
     >
-
+    <Button
+        android:id="@+id/BT_inf_turno_x_profesional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Turnos x profesional"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
+    </Button>
     <Button
         android:id="@+id/BT_inf_turno_profesional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Turnos x profesional">
+        android:text="Turnos x dia"
+        android:enabled="false"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        >
     </Button>
 
     <Button
         android:id="@+id/BT_inf_turno_ocupacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Turnos x profesional">
+        android:text="Ocupacion x dia"
+        android:enabled="false"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
     </Button>
 
     <Button
         android:id="@+id/BT_inf_turno_mes_profesional"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Turnos x profesional">
+        android:text="Turnos x mes"
+        android:enabled="false"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
     </Button>
 
     <Button
         android:id="@+id/BT_inf_turno__mes_ocupacion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Turnos x profesional">
+        android:enabled="false"
+        android:text="Ocupacion x mes"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp">
     </Button>
 
 </LinearLayout>

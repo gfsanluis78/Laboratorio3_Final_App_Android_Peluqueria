@@ -9,6 +9,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.Navigation;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -34,36 +35,17 @@ public class InformeFragment extends Fragment {
         binding = FragmentInformeBinding.inflate(inflater, container, false);
         view = binding.getRoot();
 
-        binding.BTInfTurnoMesOcupacion.setOnClickListener(new View.OnClickListener() {
+
+        binding.BTInfTurnoXProfesional.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-            }
-        });
-
-        binding.BTInfTurnoMesProfesional.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        binding.BTInfTurnoOcupacion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-
-        binding.BTInfTurnoProfesional.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.dia_TurnoByProfesionalFragment);
+                Log.d("mensaje", "click en boton");
+                Navigation.findNavController(view).navigate(R.id.cantidadTurnosxEmpleadoFragment);
             }
         });
 
 
-        return inflater.inflate(R.layout.fragment_informe, container, false);
+        return view;
     }
 
     @Override

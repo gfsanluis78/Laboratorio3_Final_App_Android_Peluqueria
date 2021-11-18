@@ -60,5 +60,6 @@ dependencies {
     // todo: agrego para graficos
     //implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
     //implementation project(':MPChartLib')
+    implementation 'com.jjoe64:graphview:4.2.2'
 
 }

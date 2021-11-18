@@ -131,4 +131,9 @@
         android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.i_trabajo.TrabajoFragment"
         android:label="Tipos de trabajos"
         tools:layout="@layout/fragment_trabajo" />
+    <fragment
+        android:id="@+id/cantidadTurnosxEmpleadoFragment"
+        android:name="com.farias.laboratorio3_final_app_android_peluqueria.ui.d_informes.CantidadTurnosxEmpleadoFragment"
+        android:label="Cantidad de turnos x profesional"
+        tools:layout="@layout/fragment_cantidad_turnosx_empleado" />
 </navigation>

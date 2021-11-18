@@ -9,6 +9,7 @@ import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Bloque;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Cliente;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.ConsultaByTipoTrabajo;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.ConsultaHorarios;
+import com.farias.laboratorio3_final_app_android_peluqueria.modelo.DatosGrafico;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Empleado;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.LoginRetrofit;
 import com.farias.laboratorio3_final_app_android_peluqueria.modelo.Preparacion;
@@ -206,6 +207,10 @@ public class ApiClient {
         // obtenerCantidadTurnosBYEmpleado
         @POST("Turnos/GetCantidadByEmpleado")
         Call<Integer> obtenerCantidadTurnosBYEmpleado(@Header("Authorization") String token, @Body Empleado empleado);
+
+        // obtenerDatosGrafico1
+        @GET("Turnos/GetTurnosAndEmpleado")
+        Call<List<DatosGrafico>> obtenerDatosGrafico1(@Header("Authorization") String token);
 
     }
 
